@@ -1,4 +1,4 @@
-# AIOps Dashboard
+#🧠 AIOps Dashboard
 
 AIOps Dashboard is a real-time monitoring and anomaly detection tool designed to provide insights into system metrics (CPU, memory, disk usage) and perform predictive analytics. 
 The application uses machine learning models for anomaly detection and generates predictive alerts. 
