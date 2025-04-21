@@ -12,34 +12,29 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# -------------------------
+
 # Function: System Metrics
-# -------------------------
 def get_system_metrics():
     cpu = psutil.cpu_percent(interval=1)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
     return cpu, memory, disk
 
-# -------------------------
+
 # Function: Anomaly Detection
-# -------------------------
 def detect_anomalies(data):
     model = IsolationForest(contamination=0.1)
     model.fit(data)
     anomalies = model.predict(data)
     return anomalies
 
-# -------------------------
 # Function: Predictive Alerts (Stub)
-# -------------------------
 def generate_predictive_alerts(data):
     alerts = ["No alerts"] * len(data)
     return alerts
 
-# -------------------------
+
 # Function: Email Alerts
-# -------------------------
 def send_email_alert(subject, body, to_email):
     from_email = os.getenv('EMAIL_USER')
     password = os.getenv('EMAIL_PASS')
@@ -68,8 +63,6 @@ def analyze_logs(logs):
     anomalies = model.predict(X)
     return anomalies
 
-# -------------------------
-# Streamlit App Layout
 # -------------------------
 st.set_page_config(layout="wide")
 st.title("🧠 AIOps Dashboard")
