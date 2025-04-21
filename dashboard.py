@@ -52,9 +52,7 @@ def send_email_alert(subject, body, to_email):
     except smtplib.SMTPException as e:
         print(f"Error: unable to send email - {e}")
 
-# -------------------------
 # Function: Log Analysis
-# -------------------------
 def analyze_logs(logs):
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(logs)
@@ -63,7 +61,6 @@ def analyze_logs(logs):
     anomalies = model.predict(X)
     return anomalies
 
-# -------------------------
 st.set_page_config(layout="wide")
 st.title("🧠 AIOps Dashboard")
 
